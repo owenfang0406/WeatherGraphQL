@@ -9,16 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.14",
     "@heroicons/react": "^1.0.6",
     "@tremor/react": "^2.8.2",
     "@types/node": "20.2.3",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
+    "country-state-city": "^3.1.4",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
+    "graphql": "^16.6.0",
+    "heroicons": "^2.0.18",
     "next": "13.4.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-select": "^5.7.3",
     "typescript": "5.0.4"
   },
   "devDependencies": {
