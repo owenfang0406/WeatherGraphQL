@@ -27,12 +27,17 @@ const fetchWeatherQuery = gql`
       }
       daily {
         temperature_2m_max
+        temperature_2m_min
         time
         weathercode
+        uv_index_clear_sky_max
+        uv_index_max
       }
       daily_units {
         temperature_2m_max
+        temperature_2m_min
         time
+        uv_index_clear_sky_max
         weathercode
       }
       elevation

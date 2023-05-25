@@ -8,12 +8,17 @@ type CurrentWeather {
 }
 type Daily {
   temperature_2m_max: [Float]
+  temperature_2m_min: [Float]
   time: [Date]
+  uv_index_clear_sky_max: [Float]
+  uv_index_max: [Float]
   weathercode: [Int]
 }
 type DailyUnits {
   temperature_2m_max: String
+  temperature_2m_min: String
   time: String
+  uv_index_clear_sky_max: String
   weathercode: String
 }
 type Hourly {

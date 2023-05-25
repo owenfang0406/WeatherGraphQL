@@ -9,12 +9,17 @@ interface CurrentWeather {
 
 interface Daily {
   temperature_2m_max: number[]
+  temperature_2m_min: number[]
   time: string[]
   weathercode: number[]
+  uv_index_max: number[]
+  uv_index_clear_sky_max: number[]
 }
 
 interface DailyUnits {
   temperature_2m_max: string
+  temperature_2m_min: string
+  uv_index_clear_sky_max: String
   time: string
   weathercode: string
 }

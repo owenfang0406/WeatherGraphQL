@@ -46,7 +46,7 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
             <CalloutCard message="This is where GTP-4 Summary will go"></CalloutCard>
           </div>
 
-          <div>
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 m-2">
             <StatCard
               title="Maximum Temperature"
               metric={`${data?.daily?.temperature_2m_max[0].toFixed(1)}°`}
@@ -57,6 +57,37 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
               metric={`${data?.daily?.temperature_2m_min[0].toFixed(1)}°`}
               color="green"
             ></StatCard>
+
+            <div>
+              <StatCard
+                title="UV Index"
+                metric={`${data?.daily?.uv_index_max[0].toFixed(1)}°`}
+                color="rose"
+              ></StatCard>
+
+              {Number(data?.daily?.temperature_2m_max[0].toFixed(1)) > 5 && (
+                <div className="mt-5">
+                  <CalloutCard
+                    message="The UV is high today, be sure to wear SPF!"
+                    warning
+                  ></CalloutCard>
+                </div>
+              )}
+            </div>
+
+            <div className="flex space-x-3">
+              <StatCard
+                title="Wind Speed"
+                metric={`${data?.current_weather?.windspeed.toFixed(1)}m/s`}
+                color="cyan"
+              ></StatCard>
+
+              <StatCard
+                title="Wind Direction"
+                metric={`${data?.current_weather?.winddirection.toFixed(1)}°`}
+                color="violet"
+              ></StatCard>
+            </div>
           </div>
         </div>
       </div>
