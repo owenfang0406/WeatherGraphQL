@@ -1,5 +1,6 @@
 import { getClient } from "@/apollo-client"
 import CalloutCard from "@/components/CalloutCard"
+import InformationPanel from "@/components/InformationPanel"
 import StatCard from "@/components/StatCard"
 import fetchWeatherQuery from "@/graphql/queries/fetchWeatherQueries"
 
@@ -30,7 +31,12 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
 
   return (
     <div>
-      {/*information panel*/}
+      <InformationPanel
+        city={city}
+        lat={lat}
+        long={long}
+        results={data}
+      ></InformationPanel>
       <div>
         <div className="p-5">
           <div className="pb-5">
@@ -42,7 +48,7 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
             </p>
           </div>
 
-          <div>
+          <div className="m-2 mb-10">
             <CalloutCard message="This is where GTP-4 Summary will go"></CalloutCard>
           </div>
 
@@ -90,6 +96,8 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
             </div>
           </div>
         </div>
+        <hr className="mb-5"></hr>
+        <div className="space-y-3">{/*charts*/}</div>
       </div>
     </div>
   )
