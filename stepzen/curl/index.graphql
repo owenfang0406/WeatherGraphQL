@@ -7,6 +7,8 @@ type CurrentWeather {
   windspeed: Float
 }
 type Daily {
+  sunrise: [DateTime]
+  sunset: [DateTime]
   temperature_2m_max: [Float]
   temperature_2m_min: [Float]
   time: [Date]
@@ -15,10 +17,13 @@ type Daily {
   weathercode: [Int]
 }
 type DailyUnits {
+  sunrise: String
+  sunset: String
   temperature_2m_max: String
   temperature_2m_min: String
   time: String
   uv_index_clear_sky_max: String
+  uv_index_max: String
   weathercode: String
 }
 type Hourly {

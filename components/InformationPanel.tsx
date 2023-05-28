@@ -49,7 +49,7 @@ function InformationPanel({ city, lat, long, results }: Props) {
 
       <hr className="mt-10 mb-5"></hr>
 
-      <div>
+      <div className="flex items-center justify-between">
         <Image
           src={`https://www.weatherbit.io/static/img/icons/${
             weatherCodeToString?.[results?.current_weather?.weathercode].icon
@@ -60,11 +60,48 @@ function InformationPanel({ city, lat, long, results }: Props) {
           width={75}
           height={75}
         ></Image>
-        <div>
-          <p>{results?.current_weather?.temperature?.toFixed(1)}°C</p>
-          <p>
+        <div className="flex items-center justify-between space-x-10">
+          <p className="text-6xl font-semibold">
+            {results?.current_weather?.temperature?.toFixed(1)}°C
+          </p>
+          <p className="text-right font-extralight text-lg">
             {weatherCodeToString[results?.current_weather?.weathercode].label}
           </p>
+        </div>
+      </div>
+
+      <div className="space-y-2 py-5">
+        <div className="flex items-center space-x-2 px-4 py-3 border border-[#6F90CD] rounded-md bg-[#405885]">
+          <SunIcon className="h-10 w-10 text-gray-400"></SunIcon>
+
+          <div className="flex-1 flex justify-between items-center">
+            <p className="font-extralight">Sunrise</p>
+            <p className="uppercase text-2xl">
+              {new Date(results?.daily?.sunrise[0]).toLocaleTimeString(
+                "en-GB",
+                {
+                  hour: "numeric",
+                  minute: "numeric",
+                  hour12: true,
+                }
+              )}
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-2 px-4 py-3 border border-[#6F90CD] rounded-md bg-[#405885]">
+          <MoonIcon className="h-10 w-10 text-gray-400"></MoonIcon>
+
+          <div className="flex-1 flex justify-between items-center">
+            <p className="font-extralight">Sunset</p>
+            <p className="uppercase text-2xl">
+              {new Date(results?.daily?.sunset[0]).toLocaleTimeString("en-GB", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+              })}
+            </p>
+          </div>
         </div>
       </div>
     </div>
