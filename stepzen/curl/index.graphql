@@ -4,11 +4,11 @@ type CurrentWeather {
   time: DateTime
   weathercode: Int
   winddirection: Int
-  windspeed: Float
+  windspeed: Int
 }
 type Daily {
-  sunrise: [String]
-  sunset: [String]
+  sunrise: [DateTime]
+  sunset: [DateTime]
   temperature_2m_max: [Float]
   temperature_2m_min: [Float]
   time: [Date]
@@ -30,9 +30,11 @@ type Hourly {
   apparent_temperature: [Float]
   dewpoint_2m: [Float]
   precipitation_probability: [Int]
+  rain: [Int]
   relativehumidity_2m: [Int]
+  snowfall: [Int]
   temperature_2m: [Float]
-  time: [String]
+  time: [DateTime]
   uv_index: [Float]
   uv_index_clear_sky: [Float]
 }
@@ -40,7 +42,9 @@ type HourlyUnits {
   apparent_temperature: String
   dewpoint_2m: String
   precipitation_probability: String
+  rain: String
   relativehumidity_2m: String
+  snowfall: String
   temperature_2m: String
   time: String
   uv_index: String

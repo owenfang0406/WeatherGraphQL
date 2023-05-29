@@ -35,6 +35,8 @@ interface Hourly {
   precipitation_probability: number[]
   relativehumidity_2m: number[]
   temperature_2m: number[]
+  snowfall: number[]
+  rain: number[]
   time: string[]
   uv_index: number[]
   uv_index_clear_sky: number[]
@@ -46,6 +48,8 @@ interface HourlyUnits {
   precipitation_probability: string
   relativehumidity_2m: string
   temperature_2m: string
+  snowfall: string
+  rain: string
   time: string[]
   uv_index: string
   uv_index_clear_sky: string

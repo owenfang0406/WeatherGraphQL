@@ -51,6 +51,8 @@ const fetchWeatherQuery = gql`
         dewpoint_2m
         precipitation_probability
         relativehumidity_2m
+        snowfall
+        rain
         temperature_2m
         time
         uv_index
@@ -61,6 +63,8 @@ const fetchWeatherQuery = gql`
         dewpoint_2m
         precipitation_probability
         relativehumidity_2m
+        snowfall
+        rain
         temperature_2m
         time
         uv_index
