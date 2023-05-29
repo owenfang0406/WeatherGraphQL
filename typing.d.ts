@@ -8,8 +8,8 @@ interface CurrentWeather {
 }
 
 interface Daily {
-  sunrise: DateTime[]
-  sunset: DateTime[]
+  sunrise: string[]
+  sunset: string[]
   temperature_2m_max: number[]
   temperature_2m_min: number[]
   time: Date[]
@@ -46,7 +46,7 @@ interface HourlyUnits {
   precipitation_probability: string
   relativehumidity_2m: string
   temperature_2m: string
-  time: string
+  time: string[]
   uv_index: string
   uv_index_clear_sky: string
 }
